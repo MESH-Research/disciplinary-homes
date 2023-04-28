@@ -1,0 +1,22 @@
+{
+    "name": "mesh-research/disciplinary-homes",
+    "description": "Example block scaffolded with Create Block tool.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "DisciplinaryHomes\\": "src/"
+        }
+    },
+    "authors": [
+		{
+			"name": "Ivy Rose",
+			"email": "ivy@msu.edu"
+		},
+        {
+            "name": "Mike Thicke",
+            "email": "thickemi@msu.edu"
+        }
+    ],
+    "require": {}
+}
