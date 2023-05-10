@@ -1,8 +1,28 @@
 .activity-item {
-	border-style: solid;
-	border-radius: 1em;
-	border-color: grey;
-	border-width: 1px;
+	display: flex;
+	gap: 20px;
 	margin-bottom: 1em;
-	padding: 1em;
+}
+
+.activity-item__avatar {
+	flex-shrink: 0;
+
+	img {
+		width: 70px;
+		aspect-ratio: 1;
+		border-radius: 50%;
+	}
+}
+
+.activity-item__content {
+	.activity-item__header {
+		margin-bottom: 12px;
+	}
+
+	blockquote.activity-item__preview {
+		background-color: transparent;
+		margin: 0;
+		padding: 3px 0 3px 10px;
+		border-left: 2px solid #eaeaea;
+	}
 }

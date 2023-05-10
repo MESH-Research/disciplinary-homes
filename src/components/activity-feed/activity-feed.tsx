@@ -5,6 +5,8 @@ import { ActivityItem } from '../activity-item/activity-item';
 
 import { ActivityItemData } from '../../api.d';
 
+import './style.scss';
+
 export const ActivityFeed = ( props : any ) => {
 	const {
 		maxItems = 5,
