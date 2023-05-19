@@ -1,0 +1,23 @@
+.deposit-single {
+	padding: 0 !important;
+
+	.deposit-single__title {
+		margin-block: 0 10px;
+	}
+
+	dl {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 6px 24px;
+
+		dd {
+			margin: 0;
+		}
+
+		dt {
+			font-weight: normal;
+			text-align: right;
+			opacity: 0.6;
+		}
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "disciplinary-homes/recent-deposits",
+	"title": "Recent Deposits Demo",
+	"version": "0.1.0",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example recent deposits block with React frontend.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "disciplinary-homes",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./front.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"attributes": {
+		"maxDeposits": {
+			"type": "number",
+			"default": 3
+		}
+	}
+}
