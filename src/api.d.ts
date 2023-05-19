@@ -2,6 +2,13 @@
  * Types for the Disciplinary Homes API
  */
 
+export type APIData = {
+	activity_feed: ActivityItemData[];
+	recent_deposits: DepositData[];
+	popular_deposits: DepositData[];
+	metrics: MetricsData;
+}
+
 export type ActivityItemData = {
 	action: ActionType;
 	child?: ChildData;
@@ -9,10 +16,6 @@ export type ActivityItemData = {
 	member?: MemberData;
 	organization?: string;
 	time_since?: string;
-}
-
-export type ActivityFeedData = {
-	activity_feed: ActivityItemData[];
 }
 
 export enum ActionType {
@@ -35,4 +38,18 @@ export type MemberData = {
 	name: string;
 	profile: string;
 	avatar: string;
+}
+
+export type DepositData = {
+	title: string;
+	link: string;
+	authors: string[];
+	editors: string[];
+	date: string;
+}
+
+export type MetricsData = {
+	followers: number;
+	deposits: number;
+	downloads: number;
 }
