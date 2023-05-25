@@ -1,5 +1,6 @@
 import { useState, useEffect } from '@wordpress/element';
-import apiFetch from '@wordpress/api-fetch';
+import apiStore from '../../hooks/api-store';
+import { resolveSelect } from '@wordpress/data';
 
 import { DepositList } from '../deposit-list/deposit-list';
 
@@ -10,15 +11,11 @@ export const RecentDeposits = ( props : any ) => {
 
 	const [ deposits, setDeposits ] = useState( [] );
 
-	useEffect( () => {
-		apiFetch( { path: '/disciplinary-homes/v1/feed' } )
-			.then( ( data : any ) => {
-				if ( data.recent_deposits ) {
-					setDeposits( data.recent_deposits.slice(0, maxDeposits) );
-				}
-			}
-		);
-	}, [] );
+	useEffect(() => {
+		resolveSelect( apiStore ).getAPIData().then((data : any) => {
+			setDeposits(data.recent_deposits.slice(0, maxDeposits));
+		});
+	}, [ maxDeposits ]);
 
 	return (
 		<DepositList

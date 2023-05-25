@@ -1,5 +1,6 @@
 import { useState, useEffect } from '@wordpress/element';
-import apiFetch from '@wordpress/api-fetch';
+import apiStore from '../../hooks/api-store';
+import { resolveSelect } from '@wordpress/data';
 
 import { ActivityItem } from '../activity-item/activity-item';
 
@@ -14,15 +15,11 @@ export const ActivityFeed = ( props : any ) => {
 
 	const [ items, setItems ] = useState( [] );
 
-	useEffect( () => {
-		apiFetch( { path: '/disciplinary-homes/v1/feed' } )
-			.then( ( data : any ) => {
-				if ( data.activity_feed ) {
-					setItems( data.activity_feed.slice(0, maxItems) );
-				}
-			}
-		);
-	}, [] );
+	useEffect(() => {
+		resolveSelect( apiStore ).getAPIData().then((data : any) => {
+			setItems(data.activity_feed.slice(0, maxItems));
+		});
+	}, [ maxItems ]);
 
 	const activityItems = items.map( ( item : ActivityItemData, index ) => {
 		return (
