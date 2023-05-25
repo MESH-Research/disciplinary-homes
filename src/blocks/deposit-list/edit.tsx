@@ -1,9 +1,9 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
 import { InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, PanelRow, TextControl } from '@wordpress/components';
+import { PanelBody, PanelRow, TextControl, RadioControl } from '@wordpress/components';
 
-import { RecentDeposits } from '../../components/recent-deposits/recent-deposits';
+import { DepositList } from '../../components/deposit-list/deposit-list';
 
 import './editor.scss';
 
@@ -17,6 +17,7 @@ import './editor.scss';
  */
 export default function Edit( { attributes, setAttributes } : any ) {
 	const {
+		queryMode,
 		maxDeposits
 	} = attributes;
 
@@ -24,6 +25,17 @@ export default function Edit( { attributes, setAttributes } : any ) {
 		<div { ...useBlockProps() } >
 			<InspectorControls>
 				<PanelBody title={ __( 'Settings', 'react-frontend-demo' ) }>
+					<PanelRow>
+						<RadioControl
+							label={ __( 'Query Mode', 'react-frontend-demo' ) }
+							selected={ queryMode }
+							options={ [
+								{ label: 'Most recent', value: 'recent' },
+								{ label: 'Most popular', value: 'popular' },
+							] }
+							onChange={ ( value ) => setAttributes( { queryMode: value } ) }
+						/>
+					</PanelRow>
 					<PanelRow>
 						<TextControl
 							label={ __( 'Max Deposits', 'react-frontend-demo' ) }
@@ -34,7 +46,8 @@ export default function Edit( { attributes, setAttributes } : any ) {
 					</PanelRow>
 				</PanelBody>
 			</InspectorControls>
-			<RecentDeposits
+			<DepositList
+				queryMode={ queryMode }
 				maxDeposits={ maxDeposits }
 			/>
 		</div>
