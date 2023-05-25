@@ -23,10 +23,10 @@ export default function Edit( { attributes, setAttributes } : any ) {
 	return (
 		<div { ...useBlockProps() } >
 			<InspectorControls>
-				<PanelBody title={ __( 'Settings', 'react-frontend-demo' ) }>
+				<PanelBody title={ __( 'Settings', 'disciplinary-homes' ) }>
 					<PanelRow>
 						<TextControl
-							label={ __( 'Max Activity Feed Items', 'react-frontend-demo' ) }
+							label={ __( 'Max Activity Feed Items', 'disciplinary-homes' ) }
 							value={ maxItems }
 							onChange={ ( value ) => setAttributes( { maxItems: value } ) }
 							type="number"

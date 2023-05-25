@@ -24,10 +24,10 @@ export default function Edit( { attributes, setAttributes } : any ) {
 	return (
 		<div { ...useBlockProps() } >
 			<InspectorControls>
-				<PanelBody title={ __( 'Settings', 'react-frontend-demo' ) }>
+				<PanelBody title={ __( 'Settings', 'disciplinary-homes' ) }>
 					<PanelRow>
 						<RadioControl
-							label={ __( 'Query Mode', 'react-frontend-demo' ) }
+							label={ __( 'Query Mode', 'disciplinary-homes' ) }
 							selected={ queryMode }
 							options={ [
 								{ label: 'Most recent', value: 'recent' },
@@ -38,7 +38,7 @@ export default function Edit( { attributes, setAttributes } : any ) {
 					</PanelRow>
 					<PanelRow>
 						<TextControl
-							label={ __( 'Max Deposits', 'react-frontend-demo' ) }
+							label={ __( 'Max Deposits', 'disciplinary-homes' ) }
 							value={ maxDeposits }
 							onChange={ ( value ) => setAttributes( { maxDeposits: value } ) }
 							type="number"
