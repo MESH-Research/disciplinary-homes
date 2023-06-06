@@ -5,6 +5,28 @@ import { DepositData } from "../../api.d";
 import './style.scss';
 
 export const DepositSingle = ( deposit: DepositData ) => {
+	const createSearchByFacetLink = (query : string, facet : string) => {
+		const url = `/deposits/?facets[${facet}][]=${encodeURIComponent(query)}`;
+		return <a href={ url }>{ query }</a>;
+	};
+
+	const renderCommaSeparatedElems = (elems : Array<JSX.Element>) => {
+		return elems.map((elem, index) => {
+			if (index == elems.length - 1) { return elem; }
+			else { return [ elem, ', ' ]; }
+		}).flat();
+	};
+
+	const authorLinks = deposit.authors.map(author => {
+		return createSearchByFacetLink(author, 'author_facet');
+	});
+
+	const editorLinks = deposit.editors.map(author => {
+		return createSearchByFacetLink(author, 'author_facet');
+	});
+
+	const dateLink = createSearchByFacetLink(deposit.date, 'pub_date_facet');
+
 	return (
 		<article className="deposit-single">
 			<h3 className="deposit-single__title">
@@ -12,11 +34,11 @@ export const DepositSingle = ( deposit: DepositData ) => {
 			</h3>
 			<dl>
 				<dt>{ __( 'Author(s):', 'disciplinary-homes' ) }</dt>
-				<dd>{ deposit.authors.join(', ') }</dd>
+				<dd>{ renderCommaSeparatedElems(authorLinks) }</dd>
 				<dt>{ __( 'Editor(s):', 'disciplinary-homes' ) }</dt>
-				<dd>{ deposit.editors.join(', ') }</dd>
+				<dd>{ renderCommaSeparatedElems(editorLinks) }</dd>
 				<dt>{ __( 'Date:', 'disciplinary-homes' ) }</dt>
-				<dd>{ deposit.date }</dd>
+				<dd>{ dateLink }</dd>
 			</dl>
 		</article>
 	);
