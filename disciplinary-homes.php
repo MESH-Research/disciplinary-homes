@@ -35,6 +35,7 @@ function block_init() {
 	register_block_type( __DIR__ . '/build/alert-button' );
 	register_block_type( __DIR__ . '/build/activity-feed' );
 	register_block_type( __DIR__ . '/build/deposit-list' );
+	register_block_type( __DIR__ . '/build/metrics-row' );
 }
 add_action( 'init', __NAMESPACE__ . '\block_init' );
 
