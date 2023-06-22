@@ -5,9 +5,10 @@ import { DepositData } from "../../api.d";
 import './style.scss';
 
 export const DepositSingle = ( deposit: DepositData ) => {
-	const createSearchByFacetLink = (query : string, facet : string) => {
+	type AnchorProps = React.DetailedHTMLProps<React.HTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
+	const createSearchByFacetLink = (query : string, facet : string, props? : AnchorProps) => {
 		const url = `/deposits/?facets[${facet}][]=${encodeURIComponent(query)}`;
-		return <a href={ url }>{ query }</a>;
+		return <a href={ url } { ...props }>{ query }</a>;
 	};
 
 	const renderCommaSeparatedElems = (elems : Array<JSX.Element>) => {
@@ -17,12 +18,12 @@ export const DepositSingle = ( deposit: DepositData ) => {
 		}).flat();
 	};
 
-	const authorLinks = deposit.authors.map(author => {
-		return createSearchByFacetLink(author, 'author_facet');
+	const authorLinks = deposit.authors.map((author, index) => {
+		return createSearchByFacetLink(author, 'author_facet', { key: index });
 	});
 
-	const editorLinks = deposit.editors.map(author => {
-		return createSearchByFacetLink(author, 'author_facet');
+	const editorLinks = deposit.editors.map((author, index) => {
+		return createSearchByFacetLink(author, 'author_facet', { key: index });
 	});
 
 	const dateLink = createSearchByFacetLink(deposit.date, 'pub_date_facet');
