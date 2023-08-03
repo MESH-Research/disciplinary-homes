@@ -32,7 +32,6 @@ require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function block_init() {
-	register_block_type( __DIR__ . '/build/alert-button' );
 	register_block_type( __DIR__ . '/build/activity-feed' );
 	register_block_type( __DIR__ . '/build/deposit-list' );
 	register_block_type( __DIR__ . '/build/metrics-row' );
@@ -45,14 +44,6 @@ add_action( 'init', __NAMESPACE__ . '\block_init' );
  * Enqueues block frontend assets.
  */
 function frontend_enqueue() {
-	$asset_file = include plugin_dir_path( __FILE__ ) . 'build/alert-button/front.asset.php';
-	wp_enqueue_script(
-		'react-frontend-demo-alert',
-		plugins_url( 'build/alert-button/front.js', __FILE__ ),
-		$asset_file['dependencies'],
-		$asset_file['version']
-	);
-
 	// Load styles from WordPress components.
 	wp_enqueue_style(
 		'wordpress-components-styles',
