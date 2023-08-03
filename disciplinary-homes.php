@@ -35,6 +35,7 @@ function block_init() {
 	register_block_type( __DIR__ . '/build/activity-feed' );
 	register_block_type( __DIR__ . '/build/deposit-list' );
 	register_block_type( __DIR__ . '/build/metrics-row' );
+	register_block_type( __DIR__ . '/build/discipline-actions' );
 	register_block_type( __DIR__ . '/build/discipline-header' );
 	register_block_type( __DIR__ . '/build/grant-footer' );
 }

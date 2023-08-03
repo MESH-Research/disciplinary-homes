@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "disciplinary-homes/discipline-actions",
+	"title": "Discipline Actions Demo",
+	"version": "0.1.0",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example discipline actions block with React frontend.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "disciplinary-homes",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./front.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"attributes": {
+		"showFindPeople": {
+			"type": "boolean",
+			"default": true
+		},
+		"showExplorePublications": {
+			"type": "boolean",
+			"default": true
+		},
+		"showBrowseGroups": {
+			"type": "boolean",
+			"default": true
+		},
+		"showBrowseSites": {
+			"type": "boolean",
+			"default": true
+		}
+	}
+}
