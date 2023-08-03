@@ -1,0 +1,18 @@
+.grant-footer {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-block: 28px;
+
+	.grant-footer__primary-text {
+		font-size: 1.6em;
+		max-width: 30ch;
+		margin: 0;
+	}
+
+	.grant-footer__logo {
+		width: 165px;
+		object-fit: contain;
+	}
+}

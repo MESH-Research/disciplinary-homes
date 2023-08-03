@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "disciplinary-homes/grant-footer",
+	"title": "Grant Footer Demo",
+	"version": "0.1.0",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Example grant footer block with React frontend.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "disciplinary-homes",
+	"editorScript": "file:./index.js",
+	"viewScript": "file:./front.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"attributes": {
+		"primaryText": {
+			"type": "string"
+		}
+	}
+}
