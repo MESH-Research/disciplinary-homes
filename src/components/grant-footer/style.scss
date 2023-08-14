@@ -1,7 +1,6 @@
 .grant-footer {
 	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
+	justify-content: center;
 	gap: 12px;
 	margin-block: 28px;
 
@@ -14,5 +13,11 @@
 	.grant-footer__logo {
 		width: 165px;
 		object-fit: contain;
+	}
+}
+
+@media screen and (max-width: 782px) {
+	.grant-footer {
+		flex-direction: column;
 	}
 }
