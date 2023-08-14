@@ -5,18 +5,18 @@
 		position: initial;
 	}
 
-	.discipline-header__slider {
+	&__slider {
 		background: #000;
 		position: absolute;
 		inset: auto 0;
 	}
 
-	.discipline-header__slide-container,
-	.discipline-header__slider-overlay {
+	&__slide-container,
+	&__slider-overlay {
 		height: clamp(275px, 400px - 15vw, 350px);
 	}
 
-	.discipline-header__slide-container {
+	&__slide-container {
 		&::before {
 			content: '';
 			position: absolute;
@@ -32,7 +32,7 @@
 		}
 	}
 
-	.discipline-header__slider-overlay {
+	&__slider-overlay {
 		position: relative;
 		z-index: 1;
 		padding: 30px 0;
@@ -51,7 +51,7 @@
 		}
 	}
 
-	.discipline-header__slider-controls {
+	& &__slider-controls {
 		display: flex;
 		align-items: center;
 		margin-top: 6px;
@@ -76,7 +76,7 @@
 		}
 	}
 
-	.discipline-header__dot-controls {
+	& &__dot-controls {
 		display: flex;
 		gap: 4px;
 

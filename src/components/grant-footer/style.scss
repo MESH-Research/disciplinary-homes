@@ -4,20 +4,19 @@
 	gap: 12px;
 	margin-block: 28px;
 
-	.grant-footer__primary-text {
+	& &__primary-text {
 		font-size: 1.6em;
 		max-width: 30ch;
 		margin: 0;
 	}
 
-	.grant-footer__logo {
+	&__logo {
 		width: 165px;
 		object-fit: contain;
 	}
-}
 
-@media screen and (max-width: 782px) {
-	.grant-footer {
+	@media screen and (max-width: 782px) {
 		flex-direction: column;
 	}
 }
+
