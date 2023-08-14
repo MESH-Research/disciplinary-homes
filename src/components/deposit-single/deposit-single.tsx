@@ -22,10 +22,6 @@ export const DepositSingle = ( deposit: DepositData ) => {
 		return createSearchByFacetLink(author, 'author_facet', { key: index });
 	});
 
-	const editorLinks = deposit.editors.map((author, index) => {
-		return createSearchByFacetLink(author, 'author_facet', { key: index });
-	});
-
 	const dateLink = createSearchByFacetLink(deposit.date, 'pub_date_facet');
 
 	return (
@@ -36,8 +32,6 @@ export const DepositSingle = ( deposit: DepositData ) => {
 			<dl>
 				<dt>{ __( 'Author(s):', 'disciplinary-homes' ) }</dt>
 				<dd>{ renderCommaSeparatedElems(authorLinks) }</dd>
-				<dt>{ __( 'Editor(s):', 'disciplinary-homes' ) }</dt>
-				<dd>{ renderCommaSeparatedElems(editorLinks) }</dd>
 				<dt>{ __( 'Date:', 'disciplinary-homes' ) }</dt>
 				<dd>{ dateLink }</dd>
 			</dl>

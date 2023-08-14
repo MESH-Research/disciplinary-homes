@@ -44,7 +44,6 @@ export type DepositData = {
 	title: string;
 	link: string;
 	authors: string[];
-	editors: string[];
 	date: string;
 }
 
