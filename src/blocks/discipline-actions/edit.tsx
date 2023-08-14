@@ -5,8 +5,6 @@ import { PanelBody, PanelRow, ToggleControl } from '@wordpress/components';
 
 import { DisciplineActions } from '../../components/discipline-actions/discipline-actions';
 
-import './editor.scss';
-
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.

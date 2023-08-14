@@ -5,8 +5,6 @@ import { PanelBody, PanelRow, TextControl, RadioControl } from '@wordpress/compo
 
 import { DepositList } from '../../components/deposit-list/deposit-list';
 
-import './editor.scss';
-
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
